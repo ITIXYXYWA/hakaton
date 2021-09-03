@@ -1,18 +1,27 @@
 import { useEffect } from 'react';
 import { fetchPOST, SendFile } from '../../api/send';
 import { URL_SEND_DATA } from '../../api/urls';
+import { Header } from '../header/header';
 import './home.css';
 
 export const Home = () => {
 
     return (
         <div className="home">
+            <Header/>
             <div className="home__form">
                 <form className='home__Form' id='sendData'>
-                    <input type="text" id='nameFile' value='Устав_действующий' placeholder='name' />
-                    <input type="text" id='inn' value='2315014748' placeholder='INN' />
-                    <input type="file" id="File-doc" placeholder='file' />
-                    <button onClick={SendFile } id='submit-data' type="submit">Отправить</button>
+                    <input type="text" id='nameFile' placeholder='Название файла' />
+                    <input type="text" id='inn' placeholder='ИНН' />
+                    <button className='home__upload'>
+                        <input type="file" hidden id="File-doc" placeholder='file' />
+                        Загрузить файл
+                    </button>
+                    <div className="home__container__btn">
+                        <button onClick={SendFile } className='home__submit' id='submit-data' type="submit">
+                            Отправить
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,15 +1,60 @@
 .home {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .home__form {
     width: 300px;
+    height: 752px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__Form input {
+    width: 300px;
+    height: 48px;
+    background: var(--background);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    box-sizing: border-box;
+}
+
+.home__Form input::placeholder {
+    color: var(--gray-color)
 }
 
 .home__Form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.home__submit {
+    box-sizing: border-box;
+    width: 300px;
+    height: 48px;
+    background-color: var(--second-color);
+    border: none;
+    color: var(--link-color);
+    font-size: 22px;
+    letter-spacing: 5%;
+}
+
+.home__upload {
+    width: 300px;
+    height: 48px;
+    background: var(--background);
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    box-sizing: border-box;
+    color: var(--second-color);
+    border: 1px solid #A6A4F4;
 }

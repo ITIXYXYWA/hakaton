@@ -1,0 +1,7 @@
+@import url(./root.css);
+
+.App {
+    width: 1600px;
+    height: 800px;
+    font-family: 'Mon';
+}
