@@ -1,0 +1,15 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__form {
+    width: 300px;
+}
+
+.home__Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

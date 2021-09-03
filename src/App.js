@@ -1,9 +1,10 @@
-import './App.css';
+import 'normalize.css'
+import { Home } from "./components/home/home.jsx";
 
 function App() {
   return (
     <div className="App">
-      ~App started~
+      <Home/>
     </div>
   );
 }
