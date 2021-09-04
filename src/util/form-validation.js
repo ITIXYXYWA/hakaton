@@ -40,7 +40,7 @@ export const validationForm = (files) => {
     uploadFile.classList.remove('home__upload__error');
     errorFileTxt.classList.add('hide');
     formChecks.file = { check: true };
-    if (files[0].name.indexOf('.pdf') === -1) {
+    if (files[0].name.indexOf('.zip') === -1) {
       uploadFile.classList.add('home__upload__error');
       errorFileTxt.classList.remove('hide');
       formChecks.file = { check: false };
