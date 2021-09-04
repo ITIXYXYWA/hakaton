@@ -1,0 +1,43 @@
+.panding-text {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--light-gray-color);
+  margin: 250px auto 0; 
+}
+
+.back-ellipse {
+  display: flex;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 46px auto;
+  background-color: var(--purple-color);
+}
+
+.front-ellipse {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 0 auto; 
+  -webkit-animation-name: 'example';
+  -webkit-animation-duration: 2s;
+  animation-name: 'example';animation-iteration-count:infinite;
+  background-color: var(--white-color);
+}
+
+@keyframes example {
+    0%   {
+      width: 16px;
+      height: 16px;
+    }
+    50% {
+      width: 48px; 
+      height: 48px;
+    }
+    100%   {
+      width: 16px;
+      height: 16px;
+    }
+}
