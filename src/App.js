@@ -1,7 +1,7 @@
 import { Header } from './components/header/header.jsx';
 import { Home } from "./components/home/home.jsx";
 import './assets/styles/App.css'
-import { Route, Router, Switch } from 'react-router';
+import { Redirect, Route, Router, Switch } from 'react-router';
 import { useState } from 'react';
 import { createBrowserHistory } from 'history';
 import { Pending } from './components/pending/pending.jsx';
@@ -34,6 +34,11 @@ function App() {
 
           <Route path='/error'>
             <Error />
+          </Route>
+
+          <Route path='*'>
+            <Home/>
+            <Redirect to='/' />
           </Route>
 
         </Switch>
