@@ -1,17 +1,23 @@
-import { useEffect } from 'react';
-import { fetchPOST, SendFile } from '../../api/send';
-import { URL_SEND_DATA } from '../../api/urls';
+import { useCallback, useEffect, useState } from 'react';
+import { SendFile } from '../../api/send';
 import { Header } from '../header/header';
 import './home.css';
 import { Container } from '../container/container';
+import { Input } from '../input/input';
+import { useDropzone } from 'react-dropzone';
 
 export const Home = () => {
+    const [files, setFiles] = useState()
+
+    const onDrop = useCallback(acceptedFiles => {
+        setFiles(acceptedFiles)
+    })
+
+    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
 
     useEffect(() => {
-        document.getElementById('inputFile').addEventListener('click', () => {
-            document.getElementById('File-doc').click()
-        })
-    }, [])
+        console.log(files[0]);
+    }, [files])
 
     return (
         <div className="home">
@@ -21,10 +27,10 @@ export const Home = () => {
                     <form className='home__Form' id='sendData'>
                         <input type="text" id='nameFile' placeholder='Название файла' />
                         <input type="text" id='inn' placeholder='ИНН' />
-                        <button id='inputFile' className='home__upload'>
-                            <input type="file" hidden id="File-doc" placeholder='file' />
+                        <div {...getRootProps()} className='home__upload'>
+                            <input {...getInputProps()} id='files' className='input__field' />
                             Загрузить файл
-                        </button>
+                        </div>                        
                         <div className="home__container__btn">
                             <button onClick={SendFile} className='home__submit' id='submit-data' type="submit">
                                 Отправить
