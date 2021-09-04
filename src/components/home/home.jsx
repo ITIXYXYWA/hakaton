@@ -14,7 +14,7 @@ export const Home = () => {
                     <input type="text" id='nameFile' placeholder='Название файла' />
                     <input type="text" id='inn' placeholder='ИНН' />
                     <button className='home__upload'>
-                        <input type="file" hidden id="File-doc" placeholder='file' />
+                        <input type="file" hidden id="File-doc" name='file' placeholder='file' />
                         Загрузить файл
                     </button>
                     <div className="home__container__btn">
