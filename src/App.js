@@ -13,7 +13,7 @@ function App() {
       <Router history={myHistory}>
         <Switch>
           <Route path='/'>
-            <Home/>
+            <Home />
           </Route>
 
           <Route path='/pending'>
