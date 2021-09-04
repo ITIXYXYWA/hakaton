@@ -69,6 +69,11 @@
     font-size: 22px;
     letter-spacing: 5%;
     cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home__submit:hover {
+    background-color: var(--second-color-hover);
 }
 
 .home__upload {
@@ -89,6 +94,12 @@
     padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: 0.2s linear;
+}
+
+.home__upload:hover {
+    color: var(--second-color-hover);
+    border: 1px solid var(--second-color-hover);
 }
 
 .home__upload__error {
