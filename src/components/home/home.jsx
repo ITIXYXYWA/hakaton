@@ -7,6 +7,12 @@ import { Container } from '../container/container';
 
 export const Home = () => {
 
+    useEffect(() => {
+        document.getElementById('inputFile').addEventListener('click', () => {
+            document.getElementById('File-doc').click()
+        })
+    }, [])
+
     return (
         <div className="home">
             <Header />
