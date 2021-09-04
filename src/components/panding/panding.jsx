@@ -3,7 +3,7 @@ import './panding.css';
 import { Header } from "../header/header";
 import { Container } from "../container/container";
 
-export const Panding = () => {
+export const Panding = ({data}) => {
   return (
     <>
       <Header disabled />
