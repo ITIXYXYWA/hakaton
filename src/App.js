@@ -4,6 +4,7 @@ import './assets/styles/App.css'
 import { Route, Router, Switch, useHistory } from 'react-router';
 import { useEffect } from 'react';
 import { createBrowserHistory } from 'history';
+import { Panding } from './components/panding/panding.jsx';
 
 const myHistory = createBrowserHistory()
 
@@ -12,12 +13,14 @@ function App() {
     <div className="App">
       <Router history={myHistory}>
         <Switch>
-          <Route path='/'>
+          <Route path='/' exact>
             <Home />
           </Route>
 
-          <Route path='/pending'>
-
+          <Route path='/pending' component={() => {
+            return <Panding />
+          }}>
+            {/* <Panding /> */}
           </Route>
 
           <Route path='/accept'>
