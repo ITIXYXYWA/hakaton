@@ -9,7 +9,7 @@
 
 Ссылка на рабочее приложение на хостинге heroku:
 
-- Приложение на [Heroku](https://react-auto-checker-docs.herokuapp.com)
+- Приложение на [Heroku](https://react-auto-checker-docs.herokuapp.com){:target="_blank"}.
 
 ## Запуск приложения на dev-server:
 
