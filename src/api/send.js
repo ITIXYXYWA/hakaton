@@ -1,12 +1,13 @@
 import { getValue } from "../util/getters";
 import { URL_SEND_DATA } from "./urls";
 
-
-
 export const SendFile = ( file ) => {
 
     document.getElementById('sendData').addEventListener('submit', event => {
         event.preventDefault()
+    })
+    document.getElementById('inputFile').addEventListener('click', () => {
+        document.getElementById('File-doc').click()
     })
 
     // const dataFile = getFormData(file)
