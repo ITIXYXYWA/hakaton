@@ -16,7 +16,7 @@ export const Home = () => {
     const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
 
     useEffect(() => {
-        console.log(files[0]);
+        console.log(files);
     }, [files])
 
     return (
