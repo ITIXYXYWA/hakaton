@@ -97,12 +97,32 @@
     transition: 0.2s linear;
 }
 
-.home__upload:hover {
-    color: var(--second-color-hover);
-    border-color: var(--second-color-hover);
-}
-
 .home__upload__error {
     border: 1px solid #FFAB2E;
     color: #FFAB2E;
+}
+
+@media screen and (max-width: 860px) {
+    .home__form {
+        margin-top: 134px
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .home__form {
+        margin-top: 70px;
+        width: 250px;
+    }
+    
+    .home__input__name, .home__input__inn {
+        width: 250px;
+    }
+
+    .home__submit {
+        width: 250px;
+    }
+
+    .home__upload {
+        width: 250px;
+    }
 }
