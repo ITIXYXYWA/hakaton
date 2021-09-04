@@ -4,8 +4,8 @@
 -----
 ### Start `NodeJS last stable version`
 
-npm i
-npm start
+- npm i
+- npm start
 ----
 
 # User info
