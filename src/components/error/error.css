@@ -1,0 +1,48 @@
+.error-img {
+  display: block;
+  margin: 162px auto 0;
+}
+
+.error-title {
+  margin: 28px auto 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+}
+
+.error-content {
+  max-width: 590px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.file {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  border-bottom: solid 2px #7270FF;
+  margin-bottom: 32px;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  margin-top: 22px;
+}
+
+.error-icon {
+  margin-right: 21px;
+}
+
+.go-back--error{
+  margin: 30px 0;
+}
