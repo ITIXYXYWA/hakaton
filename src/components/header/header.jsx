@@ -2,7 +2,6 @@ import './header.css';
 import { Container } from '../container/container';
 
 export const Header = (props) => {
-    console.log(props);
     return (
         <div className="header">
             <Container>

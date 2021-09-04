@@ -26,10 +26,10 @@ export const Home = () => {
                 <div className="home__form">
                     <form className='home__Form' id='sendData'>
                         <span className="error-message error-message--name hide"><img src={errorStar} alt="" /> Невернно введено название</span>
-                        <input type="text" id='nameFile' placeholder='Название файла' className='home__input__name' />
+                        <input onChange={() => validationForm(files)} type="text" id='nameFile' placeholder='Название файла' className='home__input__name' />
                         <span className="error-message error-message--inn hide"><img src={errorStar} alt="" /> Неверно введён ИНН</span>
-                        <input type="text" id='inn' placeholder='ИНН' className='home__input__inn' />
-                        <span className="error-message error-message--file hide"><img src={errorStar} alt="" /> Вы не загрузили файл</span>
+                        <input onChange={() => validationForm(files)} type="text" id='inn' placeholder='ИНН' className='home__input__inn' />
+                        <span className="error-message error-message--file hide"><img src={errorStar} alt="" /> {files === undefined ? " Вы не загрузили файл" : (validationForm(files), "Не верный формат файла")} </span>
                         <div {...getRootProps()} className='home__upload'>
                             <input {...getInputProps()} id='files' className='input__field' />
                             {files !== undefined ?
@@ -43,7 +43,14 @@ export const Home = () => {
                                 className='home__submit'
                                 id='submit-data'
                                 onClick={() => {
-                                    validationForm(files)
+                                    const validObject = Object.values(validationForm(files)).every((el) => {
+                                        return el.check === true;
+                                    });
+
+                                    if (validObject === true) {
+                                        localStorage.setItem('form', JSON.stringify(validationForm(files)));
+                                        window.location.href = '/pending'
+                                    }
                                 }
                                 }
                             >
