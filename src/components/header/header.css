@@ -23,3 +23,7 @@
 .header__nav-item.active {
     border-bottom: 3px solid var(--border-bottom);
 }
+
+.disabled-nav {
+    cursor: pointer;
+}

@@ -21,8 +21,8 @@
   height: 16px;
   border-radius: 50%;
   margin: 0 auto; 
-  -webkit-animation-name: 'example'; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: 'example';
+  -webkit-animation-duration: 2s;
   animation-name: 'example';animation-iteration-count:infinite;
   background-color: var(--white-color);
 }

@@ -6,7 +6,7 @@ import { Container } from "../container/container";
 export const Panding = () => {
   return (
     <>
-      <Header />
+      <Header disabled />
       <Container>
         <span className="panding-text">Ожидайте проверки результатов!</span>
         <div className="back-ellipse">
