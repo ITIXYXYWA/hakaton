@@ -26,8 +26,25 @@
   line-height: 21px;
   letter-spacing: 0.02em;
 }
+
+.go-back:hover {
+  color: var(--dark-grey);
+}
+
+.go-back:active {
+  opacity: 0.4;
+}
+
 .go-back-arrow {
   display: block;
   height: 16px;
   margin-right: 6px;
+}
+
+.go-back:hover path {
+  fill: var(--dark-grey);
+}
+
+.go-back:active path {
+  opacity: 0.4;
 }
