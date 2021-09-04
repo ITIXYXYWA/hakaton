@@ -18,13 +18,13 @@ export const Header = (props) => {
                             props.noActive === true ?
                                 <>
                                     <li className="header__nav-item">
-                                        <a href="/?">Проверка файлов</a>
+                                        <a href="/">Проверка файлов</a>
                                     </li>
                                 </>
                                 :
                                 <>
                                     <li className="header__nav-item active">
-                                        <a href="/?">Проверка файлов</a>
+                                        <a href="/">Проверка файлов</a>
                                     </li>
                                 </>
                         }
