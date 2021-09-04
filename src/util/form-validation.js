@@ -39,10 +39,11 @@ export const validationForm = (files) => {
   if (files !== undefined) {
     uploadFile.classList.remove('home__upload__error');
     errorFileTxt.classList.add('hide');
+    formChecks.file = { check: true };
     if (files[0].name.indexOf('.zip') === -1) {
       uploadFile.classList.add('home__upload__error');
       errorFileTxt.classList.remove('hide');
-      formChecks.file = { check: true };
+      formChecks.file = { check: false };
     }
   } else {
     uploadFile.classList.add('home__upload__error');
