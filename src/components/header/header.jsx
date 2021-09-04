@@ -13,9 +13,6 @@ export const Header = (props) => {
                                 <li className="header__nav-item">
                                     <a className='disabled-nav'>Проверка файлов</a>
                                 </li>
-                                <li className="header__nav-item">
-                                    <a className='disabled-nav'>Хранилище</a>
-                                </li>
                             </>
                             :
                             props.noActive === true ?
@@ -23,17 +20,11 @@ export const Header = (props) => {
                                     <li className="header__nav-item">
                                         <a href="/?">Проверка файлов</a>
                                     </li>
-                                    <li className="header__nav-item">
-                                        <a href="">Хранилище</a>
-                                    </li>
                                 </>
                                 :
                                 <>
                                     <li className="header__nav-item active">
                                         <a href="/?">Проверка файлов</a>
-                                    </li>
-                                    <li className="header__nav-item">
-                                        <a href="">Хранилище</a>
                                     </li>
                                 </>
                         }

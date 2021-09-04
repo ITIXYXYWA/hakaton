@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { createBrowserHistory } from 'history';
 import { Panding } from './components/panding/panding.jsx';
 import { Accept } from './components/accept/accept.jsx';
+import { Error } from './components/error/error.jsx';
 
 const myHistory = createBrowserHistory()
 
@@ -27,11 +28,7 @@ function App() {
           </Route>
 
           <Route path='/error'>
-
-          </Route>
-
-          <Route path='/storage'>
-
+            <Error />
           </Route>
 
         </Switch>
