@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { SendFile } from '../../api/send';
 import { Header } from '../header/header';
-import './home.css';
 import { Container } from '../container/container';
-import { Input } from '../input/input';
 import { useDropzone } from 'react-dropzone';
+import './home.css';
 
 export const Home = () => {
     const [files, setFiles] = useState()
@@ -32,7 +30,7 @@ export const Home = () => {
                             Загрузить файл
                         </div>                        
                         <div className="home__container__btn">
-                            <button onClick={SendFile} className='home__submit' id='submit-data' type="submit">
+                            <button className='home__submit' id='submit-data' type="submit">
                                 Отправить
                             </button>
                         </div>
