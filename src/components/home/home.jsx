@@ -2,17 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { Header } from '../header/header';
 import { Container } from '../container/container';
 import { useDropzone } from 'react-dropzone';
-import './home.css';
 import { getConverData } from '../../api/send';
 import { validationForm } from '../../util/form-validation';
 import errorStar from '../../assets/img/error-star.svg';
+import './home.css';
 
 export const Home = () => {
     const [files, setFiles] = useState()
 
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
-    })
+    }, [])
        
     useEffect(() => {
         if (files !== undefined) {
@@ -21,7 +21,7 @@ export const Home = () => {
         }
     },[files])
 
-    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
+    const { getInputProps, getRootProps } = useDropzone({onDrop})
 
     return (
         <div className="home">
