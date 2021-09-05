@@ -1,8 +1,6 @@
-import { Header } from './components/header/header.jsx';
 import { Home } from "./components/home/home.jsx";
 import './assets/styles/App.css'
 import { Redirect, Route, Router, Switch } from 'react-router';
-import { useState, useEffect } from 'react';
 import { createBrowserHistory } from 'history';
 import { Pending } from './components/pending/pending.jsx';
 import { Accept } from './components/accept/accept.jsx';
@@ -11,7 +9,6 @@ import { Error } from './components/error/error.jsx';
 const myHistory = createBrowserHistory()
 
 function App() {
-  const [error, setError] = useState()
 
   return (
     <div className="App">
@@ -22,9 +19,7 @@ function App() {
           </Route>
 
           <Route path='/pending'>
-            <Pending
-
-            />
+            <Pending />
           </Route>
 
           <Route path='/accept'>
