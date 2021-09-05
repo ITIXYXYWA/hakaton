@@ -14,7 +14,17 @@ export const getConverData = (file) => {
             .replace("data:", "")
             .replace(/^.+,/, "");
 
-            fetch(CONVERT, {
+            localStorage.setItem('stringBase', base64String)
+
+            
+    };
+    
+    reader.readAsDataURL(new Blob([file[0]], {type: "application/octet-stream"}));
+
+}
+
+export const oneMoreFun = () => {
+    fetch(CONVERT, {
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
@@ -22,8 +32,8 @@ export const getConverData = (file) => {
                     {
                         Name: "File",
                         FileValue: {
-                            Name: file[0].name,
-                            Data: base64String
+                            Name: JSON.parse(localStorage.getItem('form')).filename.text + '.pdf',
+                            Data: localStorage.getItem('stringBase')
                         }
                     },
                     {
@@ -34,8 +44,4 @@ export const getConverData = (file) => {
             })
         }).then(response => response.json())
         .then(res => getText(res.Files[0].Url));
-    };
-    
-    reader.readAsDataURL(new Blob([file[0]], {type: "application/octet-stream"}));
-
 }
