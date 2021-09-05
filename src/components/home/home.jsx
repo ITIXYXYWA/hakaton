@@ -13,13 +13,11 @@ export const Home = () => {
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
     })
-    
-    const { getInputProps, getRootProps, isDragActive } = useDropzone({ onDrop })
-   
+       
     useEffect(() => {
         if (files !== undefined) {
             console.log(files);
-            getConverData(files).then(data => console.log(data))
+            getConverData(files)
         }
     },[files])
 
