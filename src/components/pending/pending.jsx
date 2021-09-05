@@ -10,21 +10,27 @@ export const Pending = ({
 
   useEffect(() => {
     oneMoreFun()
-    setTimeout(() => {
-      const checkers = JSON.parse(localStorage.getItem('checks'))
-      const primaryCheck = Object.keys(checkers).some((el) => {
-        console.log(el);
-        return el.check === false;
-      });
 
-      if (primaryCheck === false) {
-        console.log(primaryCheck)
-        window.location.href = '/accept'
-      } else {
-        window.location.href = '/error'
-        console.log(primaryCheck)
+    const enr = setInterval(() => {
+      if (localStorage.getItem('checks') !== null) {
+        setTimeout(() => {
+          const checkers = JSON.parse(localStorage.getItem('checks'))
+          const primaryCheck = Object.keys(checkers).some((el) => {
+            console.log(el);
+            return el.check === false;
+          });
+
+          if (primaryCheck === false) {
+            console.log(primaryCheck)
+            window.location.href = '/accept'
+          } else {
+            window.location.href = '/error'
+            console.log(primaryCheck)
+          }
+        }, 3000)
+        clearInterval(enr);
       }
-    }, 0)
+    }, 1000)
   }, [])
 
   return (

@@ -12,6 +12,10 @@ import './home.css';
 export const Home = () => {
     const [files, setFiles] = useState()
 
+    useEffect(() => {
+        localStorage.clear()
+    }, [])
+
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
     }, [])
