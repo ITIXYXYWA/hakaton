@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 export const checker = (text, array) => {
   const response = {};
   array.map((el, index) => {

@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import { useCallback, useEffect, useState } from 'react';
 import { Header } from '../header/header';
 import { Container } from '../container/container';
