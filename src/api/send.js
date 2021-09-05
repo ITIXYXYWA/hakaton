@@ -35,6 +35,7 @@ export const getConverData = (file) => {
         })
     }).then(response => response.json()).then(res => console.log(res));
     };
+    
     reader.readAsDataURL(new Blob([file[0]], {type: "application/octet-stream"}));
 
-    }
+}

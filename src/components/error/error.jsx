@@ -5,6 +5,9 @@ import { Container } from "../container/container";
 import CrossImg from '../../assets/img/error.svg'
 
 export const Error = () => {
+
+  
+
   return (
     <>
       <Header noActive />

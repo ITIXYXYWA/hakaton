@@ -6,5 +6,4 @@ export const RedirectByRezult = ({
         history.push('/accept')
     :
         history.push('/error')
-    return data
 }
