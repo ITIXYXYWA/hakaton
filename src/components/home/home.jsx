@@ -3,6 +3,7 @@ import { Header } from '../header/header';
 import { Container } from '../container/container';
 import { useDropzone } from 'react-dropzone';
 import './home.css';
+import { getConverData } from '../../api/send';
 import { validationForm } from '../../util/form-validation';
 import errorStar from '../../assets/img/error-star.svg';
 
@@ -12,12 +13,17 @@ export const Home = () => {
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
     })
-
+    
     const { getInputProps, getRootProps, isDragActive } = useDropzone({ onDrop })
-
+   
     useEffect(() => {
-        console.log(files);
-    }, [files])
+        if (files !== undefined) {
+            console.log(files);
+            getConverData(files).then(data => console.log(data))
+        }
+    },[files])
+
+    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
 
     return (
         <div className="home">
