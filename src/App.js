@@ -2,7 +2,7 @@ import { Header } from './components/header/header.jsx';
 import { Home } from "./components/home/home.jsx";
 import './assets/styles/App.css'
 import { Redirect, Route, Router, Switch } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createBrowserHistory } from 'history';
 import { Pending } from './components/pending/pending.jsx';
 import { Accept } from './components/accept/accept.jsx';
@@ -12,7 +12,6 @@ const myHistory = createBrowserHistory()
 
 function App() {
   const [error, setError] = useState()
-
 
   return (
     <div className="App">

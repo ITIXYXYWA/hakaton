@@ -3,6 +3,8 @@ import { Header } from '../header/header';
 import { Container } from '../container/container';
 import { useDropzone } from 'react-dropzone';
 import './home.css';
+import { getConverData } from '../../api/send';
+// import { convertSome } from '../../api/root.api';
 
 export const Home = () => {
     const [files, setFiles] = useState()
@@ -11,11 +13,14 @@ export const Home = () => {
         setFiles(acceptedFiles)
     })
 
-    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
-
     useEffect(() => {
-        console.log(files);
-    }, [files])
+        if (files !== undefined) {
+            console.log(files);
+            getConverData(files).then(data => console.log(data))
+        }
+    },[files])
+
+    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
 
     return (
         <div className="home">
@@ -35,6 +40,15 @@ export const Home = () => {
                             </button>
                         </div>
                     </form>
+
+                            {/* <form action="https://v2.convertapi.com/convert/pdf/to/jpg?Secret=ZSh7pIpkM2iPWvuI" method="post" encType="multipart/form-data">
+                                <input type="file" name="File" />
+                                <input type="hidden" name="StoreFile" value="true" />
+                                <input type="submit" value="Convert file" onSubmit={(e) => {
+                                    console.log(e);
+                                }}/>
+                            </form> */}
+
                 </div>
             </Container>
         </div>
