@@ -44,8 +44,9 @@ export const Home = () => {
                         </div>
                         <div className="home__container__btn">
                             <a
-                                className='home__submit'
-                                id='submit-data'
+                            href
+                            className='home__submit'
+                            id='submit-data'
                                 onClick={() => {
                                     const validObject = Object.values(validationForm(files)).every((el) => {
                                         return el.check === true;
@@ -54,9 +55,8 @@ export const Home = () => {
                                     if (validObject === true) {
                                         localStorage.setItem('form', JSON.stringify(validationForm(files)));
                                         window.location.href = '/pending'
-                                    }
-                                }
-                                }
+                                     }
+                                }}
                             >
                                 Отправить
                             </a>
