@@ -6,7 +6,9 @@ import CrossImg from '../../assets/img/error.svg'
 
 export const Error = () => {
 
-  
+  const error = JSON.parse(localStorage.getItem('checks'))
+
+
 
   return (
     <>
@@ -23,11 +25,21 @@ export const Error = () => {
         <h1 className='error-title'>Упсс.... Не все проверки прошли успешно!</h1>
 
         <div className="error-content">
-          <span className="file">Файл: Устав.pdf</span>
-          <span className='error'>
-            <img src={CrossImg} className='error-icon' alt="" />
-            Отсутствует презентация компании
-          </span>
+          <span className="file">Файл: {JSON.parse(localStorage.getItem('form')).filename.text}</span>
+            {
+              Object.entries(error).map(el => el[1]).map(el => {
+                if (el.check !== true) {
+                return (
+                   <span className='error'>
+                    <img src={CrossImg} className='error-icon' alt="" />
+                      Отсутствует {el.text}
+                    </span>
+                )      
+                } 
+            
+              })
+            }
+
           <a href="/" className="go-back go-back--error">
             <span className='go-back-arrow'>
               <svg width="43" height="16" viewBox="0 0 43 16" fill="none" xmlns="http://www.w3.org/2000/svg">

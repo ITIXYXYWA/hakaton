@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-sequences */
 import { useCallback, useEffect, useState } from 'react';
 import { Header } from '../header/header';
@@ -14,13 +15,6 @@ export const Home = () => {
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
     }, [])
-       
-    useEffect(() => {
-        if (files !== undefined) {
-            console.log(files);
-            getConverData(files)
-        }
-    },[files])
 
     const { getInputProps, getRootProps } = useDropzone({onDrop})
 
@@ -45,7 +39,6 @@ export const Home = () => {
                         </div>
                         <div className="home__container__btn">
                             <a
-                            href
                             className='home__submit'
                             id='submit-data'
                                 onClick={() => {
@@ -55,8 +48,10 @@ export const Home = () => {
 
                                     if (validObject === true) {
                                         localStorage.setItem('form', JSON.stringify(validationForm(files)));
+                                        getConverData(files)
                                         window.location.href = '/pending'
-                                     }
+                                        localStorage.setItem('fileNaming', files)
+                                    }
                                 }}
                             >
                                 Отправить
