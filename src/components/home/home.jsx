@@ -2,17 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { Header } from '../header/header';
 import { Container } from '../container/container';
 import { useDropzone } from 'react-dropzone';
-import './home.css';
 import { getConverData } from '../../api/send';
 import { validationForm } from '../../util/form-validation';
 import errorStar from '../../assets/img/error-star.svg';
+import './home.css';
 
 export const Home = () => {
     const [files, setFiles] = useState()
 
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
-    })
+    }, [])
        
     useEffect(() => {
         if (files !== undefined) {
@@ -21,7 +21,7 @@ export const Home = () => {
         }
     },[files])
 
-    const { getInputProps, getRootProps, isDragActive } = useDropzone({onDrop})
+    const { getInputProps, getRootProps } = useDropzone({onDrop})
 
     return (
         <div className="home">
@@ -44,8 +44,9 @@ export const Home = () => {
                         </div>
                         <div className="home__container__btn">
                             <a
-                                className='home__submit'
-                                id='submit-data'
+                            href
+                            className='home__submit'
+                            id='submit-data'
                                 onClick={() => {
                                     const validObject = Object.values(validationForm(files)).every((el) => {
                                         return el.check === true;
@@ -54,9 +55,8 @@ export const Home = () => {
                                     if (validObject === true) {
                                         localStorage.setItem('form', JSON.stringify(validationForm(files)));
                                         window.location.href = '/pending'
-                                    }
-                                }
-                                }
+                                     }
+                                }}
                             >
                                 Отправить
                             </a>

@@ -1,5 +1,3 @@
-import imgStar from '../assets/img/error-star.svg';
-
 export const validationForm = (files) => {
   const formChecks = {};
   let inputName = document.getElementById('nameFile');
@@ -22,7 +20,7 @@ export const validationForm = (files) => {
     };
   }
 
-  if (inputInn.value.length === 0 || inputInn.value.length !== 10 && inputInn.value.length !== 12) {
+  if (inputInn.value.length === 0 || inputInn.value.length !== 10 & inputInn.value.length !== 12) {
     inputInn.classList.add('home__input__error');
     errorInnTxt.classList.remove('hide');
     formChecks.inn = { check: false };
