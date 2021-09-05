@@ -3,7 +3,7 @@
   width: -moz-fit-content;
   width: fit-content;
   color: var(--light-gray-color);
-  margin: 250px auto 0; 
+  margin: 250px auto 0;
 }
 
 .back-ellipse {
@@ -40,4 +40,10 @@
       width: 16px;
       height: 16px;
     }
+}
+
+@media screen and (max-width: 305px) {
+  .pending-text {
+    font-size: 14px;
+  }
 }

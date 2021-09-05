@@ -4,7 +4,8 @@ import { Container } from '../container/container';
 import { useDropzone } from 'react-dropzone';
 import './home.css';
 import { getConverData } from '../../api/send';
-// import { convertSome } from '../../api/root.api';
+import { validationForm } from '../../util/form-validation';
+import errorStar from '../../assets/img/error-star.svg';
 
 export const Home = () => {
     const [files, setFiles] = useState()
@@ -12,7 +13,9 @@ export const Home = () => {
     const onDrop = useCallback(acceptedFiles => {
         setFiles(acceptedFiles)
     })
-
+    
+    const { getInputProps, getRootProps, isDragActive } = useDropzone({ onDrop })
+   
     useEffect(() => {
         if (files !== undefined) {
             console.log(files);
@@ -28,27 +31,39 @@ export const Home = () => {
             <Container>
                 <div className="home__form">
                     <form className='home__Form' id='sendData'>
-                        <input type="text" id='nameFile' placeholder='Название файла' />
-                        <input type="text" id='inn' placeholder='ИНН' />
+                        <span className="error-message error-message--name hide"><img src={errorStar} alt="" /> Невернно введено название</span>
+                        <input onChange={() => validationForm(files)} type="text" id='nameFile' placeholder='Название файла' className='home__input__name' />
+                        <span className="error-message error-message--inn hide"><img src={errorStar} alt="" /> Неверно введён ИНН</span>
+                        <input onChange={() => validationForm(files)} type="text" id='inn' placeholder='ИНН' className='home__input__inn' />
+                        <span className="error-message error-message--file hide"><img src={errorStar} alt="" /> {files === undefined ? " Вы не загрузили файл" : (validationForm(files), "Не верный формат файла")} </span>
                         <div {...getRootProps()} className='home__upload'>
                             <input {...getInputProps()} id='files' className='input__field' />
-                            Загрузить файл
-                        </div>                        
+                            {files !== undefined ?
+                                files[0].name.length > 25 ?
+                                    files[0].name.slice(0, 25) + '...'
+                                    : files[0].name
+                                : "Загрузить файл"}
+                        </div>
                         <div className="home__container__btn">
-                            <button className='home__submit' id='submit-data' type="submit">
+                            <a
+                                className='home__submit'
+                                id='submit-data'
+                                onClick={() => {
+                                    const validObject = Object.values(validationForm(files)).every((el) => {
+                                        return el.check === true;
+                                    });
+
+                                    if (validObject === true) {
+                                        localStorage.setItem('form', JSON.stringify(validationForm(files)));
+                                        window.location.href = '/pending'
+                                    }
+                                }
+                                }
+                            >
                                 Отправить
-                            </button>
+                            </a>
                         </div>
                     </form>
-
-                            {/* <form action="https://v2.convertapi.com/convert/pdf/to/jpg?Secret=ZSh7pIpkM2iPWvuI" method="post" encType="multipart/form-data">
-                                <input type="file" name="File" />
-                                <input type="hidden" name="StoreFile" value="true" />
-                                <input type="submit" value="Convert file" onSubmit={(e) => {
-                                    console.log(e);
-                                }}/>
-                            </form> */}
-
                 </div>
             </Container>
         </div>

@@ -1,3 +1,7 @@
 body {
   background-color: var(--background);
 }
+
+.hide {
+  display: none;
+}

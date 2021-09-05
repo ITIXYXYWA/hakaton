@@ -1,12 +1,15 @@
 :root {
     --white-color: #FFFFFF;
-    --background: #E5E5E5;
+    --background: #F9F9F9;
     --second-color: #7270FF;
+    --second-color-hover: #4441f3;
     --link-color: #FFFFFF;
     --border-bottom: #FFAB2E;
     --gray-color: #A6A6A6;
     --light-gray-color: #C0C0C0;
     --purple-color: #A6A4F4;
+    --error-silver: #B5B5B5;
+    --dark-grey: #787878;
 }
 
 @font-face {

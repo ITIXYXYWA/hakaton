@@ -26,8 +26,67 @@
   line-height: 21px;
   letter-spacing: 0.02em;
 }
+
+.go-back:hover {
+  color: var(--dark-grey);
+}
+
+.go-back:active {
+  opacity: 0.4;
+}
+
 .go-back-arrow {
   display: block;
   height: 16px;
   margin-right: 6px;
+}
+
+.go-back:hover path {
+  fill: var(--dark-grey);
+}
+
+.go-back:active path {
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 470px) {
+
+  .accept-img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .accept-title {
+    font-size: 18px;
+  }
+
+  .go-back {
+    font-size: 16px;
+  }
+
+  .go-back-arrow svg {
+    width: 32px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+
+  .accept-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .accept-title {
+    font-size: 14px;
+  }
+
+  .go-back {
+    font-size: 12px;
+  }
+
+  .go-back-arrow svg {
+    width: 22px;
+    height: 19px;
+  }
 }
